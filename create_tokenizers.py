@@ -5,6 +5,10 @@ import tokenizers
 def train_tokenizer(texts, save_path):
     bpe_model = tokenizers.models.BPE(unk_token='<unk>')
     bpe_tokenizer = tokenizers.Tokenizer(bpe_model)
+    
+    # Removes case sensitivity
+    bpe_tokenizer.normalizer = tokenizers.normalizers.Lowercase()
+    
     bpe_tokenizer.pre_tokenizer = tokenizers.pre_tokenizers.Whitespace()
     
     special_tokens = ['<pad>','<sos>','<eos>','<unk>']
