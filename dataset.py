@@ -4,7 +4,7 @@ from torch.nn.utils.rnn import pad_sequence
 
 
 PAD_ID = 0
-def collate_fn(batch, tokenizer):
+def collate_fn(batch):
     '''
     batch = [
         (eng_tensor_1, hin_tensor_1),  
