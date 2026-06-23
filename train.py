@@ -86,7 +86,7 @@ if __name__ == "__main__":
     criterion = nn.CrossEntropyLoss(ignore_index=PAD_ID)
 
     print("\n--- Starting Training ---")
-    train(model, train_loader, optimizer, criterion, device, n_epochs=5)
+    train(model, train_loader, optimizer, criterion, device, n_epochs=15)
 
     print("\n--- Running Final Test ---")
     test_loss = test(model, test_loader, criterion, device) 
